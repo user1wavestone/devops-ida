@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var winston = require('winston');
 
 var index = require('./routes/index');
+var users = require('./routes/users');
 
 var app = express();
 
@@ -31,6 +32,7 @@ app.use('/datatables/css', express.static(__dirname + '/node_modules/datatables/
 app.use('/datatables/images', express.static(__dirname + '/node_modules/datatables/media/images/'));
 
 app.use('/', index);
+app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

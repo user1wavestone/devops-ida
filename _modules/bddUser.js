@@ -15,7 +15,7 @@ var BddUser = function () {
 
 BddUser.prototype.getDatabase = function () { return this.database;}
 
-BddUser.prototype.localReg = function(prenom, nom, sentence){
+BddUser.prototype.localReg = function(prenom, nom, sentence, callback){
   var db = this.pdb;
   var deferred = Q.defer();
 
@@ -29,11 +29,9 @@ BddUser.prototype.localReg = function(prenom, nom, sentence){
   db.post(user).then(function (response) {
     console.log("USER CREATED");
   }).catch(function (err) {
-    console.log(err);
+    callback(err);
   });
-  deferred.resolve(user);
-
- return deferred.promise;
+  callback(null,user);
 }
 
 BddUser.prototype.getUsers = function (callback) {
