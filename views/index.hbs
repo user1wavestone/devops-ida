@@ -1,0 +1,59 @@
+<!-- Page Content -->
+<div id="page-content-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+            <div class="users-menu">
+              <h1>{{title}}</h1>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+            <div class="users-content">
+                <table class="table table-striped table-bordered" id="table">
+                    <thead>
+                    <tr>
+                        <th>Prenom</th>
+                        <th>Nom</th>
+                        <th>Avis</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each users}}
+                        <tr>
+                            <td>{{this.prenom}}</td>
+                            <td>{{this.nom}}</td>
+                            <td>{{this.sentence}}</td>
+                        </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function () {
+  $('#table').DataTable({
+    "language": {
+        "lengthMenu": "Afficher _MENU_ entrées par page",
+        "zeroRecords": "Aucune entrées disponibles",
+        "search": "Recherche:",
+        "info": "Page _PAGE_ sur _PAGES_",
+        "infoEmpty": "Aucune entrées disponibles",
+        "infoFiltered": "(recherche effectuée sur _MAX_ entrées)",
+        "paginate": {
+            "first": "Première",
+            "last": "Dernière",
+            "next": "Suivante",
+            "previous": "Précédente"
+        },
+        "infoFiltered": "(filtered from _MAX_ total records)"
+    }
+  });
+ });
+</script>
+<!-- /#page-content-wrapper -->
