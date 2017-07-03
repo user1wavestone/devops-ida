@@ -20,4 +20,8 @@ router.get('/ska', function(req, res, next) {
   res.render('ska');
 });
 
+router.get('/ryk', function(req, res, next) {
+  res.render('ryk');
+});
+
 module.exports = router;
