@@ -16,6 +16,27 @@ router.post('/validate', function(req, res, next) {
   });
 });
 
+router.get('/ryk', function(req, res, next) {
+  var triG = ryk;
+  bddUser.getUserByTriG(triG,
+  function(err, rows){
+    if(err){
+      res.render('error', {
+        error : err
+      });
+    }
+    if(rows[0]){
+      res.render(triG, {
+        user : rows[0]
+      });
+    }else{
+      res.render('error', {
+        message: "Cette page n'existe pas sur cette version de l'application"
+      });
+    }
+  });
+});
+
 router.get('/:trig', function(req, res, next) {
   var triG = req.params.trig;
   bddUser.getUserByTriG(triG,
