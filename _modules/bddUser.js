@@ -15,16 +15,15 @@ var BddUser = function () {
 
 BddUser.prototype.getDatabase = function () { return this.database;}
 
-BddUser.prototype.localReg = function(prenom, nom, sentence, callback){
+BddUser.prototype.localReg = function(triG, sentence, callback){
   var db = this.pdb;
   var deferred = Q.defer();
 
   var user = {
-    "prenom": prenom,
-    "nom": nom,
+    "triG": triG,
     "sentence": sentence
   }
-  console.log("CREATING USER:", prenom);
+  console.log("CREATING USER:", triG);
   winston.log('info', 'LocalReg', user);
   db.post(user).then(function (response) {
     console.log("USER CREATED");
@@ -37,7 +36,18 @@ BddUser.prototype.localReg = function(prenom, nom, sentence, callback){
 BddUser.prototype.getUsers = function (callback) {
   var db = this.pdb;
   db.find({
-    selector: {prenom : {'$exists': true}}
+    selector: {triG : {'$exists': true}}
+  }).then(function (result) {
+    callback(null, result.docs);
+  }).catch(function (err) {
+    callback(err);
+  });
+}
+
+BddUser.prototype.getUserByTriG = function (triG, callback) {
+  var db = this.pdb;
+  db.find({
+    selector: {triG : {triG: triG}}
   }).then(function (result) {
     callback(null, result.docs);
   }).catch(function (err) {
@@ -48,7 +58,7 @@ BddUser.prototype.getUsers = function (callback) {
 BddUser.prototype.checkTable = function () {
   this.pdb.createIndex({
     index: {
-      fields: ['prenom']
+      fields: ['triG']
     }
   });
  }
