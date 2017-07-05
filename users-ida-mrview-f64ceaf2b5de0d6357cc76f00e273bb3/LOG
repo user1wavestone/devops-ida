@@ -1,5 +1,5 @@
-2017/07/05-15:04:29.360 9fd8 Recovering log #28
-2017/07/05-15:04:29.360 9fd8 Level-0 table #31: started
-2017/07/05-15:04:29.375 9fd8 Level-0 table #31: 237 bytes OK
-2017/07/05-15:04:29.391 9fd8 Delete type=0 #28
-2017/07/05-15:04:29.391 9fd8 Delete type=3 #26
+2017/07/05-15:32:58.154 bda0 Recovering log #67
+2017/07/05-15:32:58.154 bda0 Level-0 table #70: started
+2017/07/05-15:32:58.160 bda0 Level-0 table #70: 237 bytes OK
+2017/07/05-15:32:58.188 bda0 Delete type=0 #67
+2017/07/05-15:32:58.192 bda0 Delete type=3 #65

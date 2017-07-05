@@ -16,18 +16,23 @@ router.post('/validate', function(req, res, next) {
   });
 });
 
-router.get('/ska', function(req, res, next) {
-  bddUser.getUserByTriG(req.body.triG,
+router.get('/:trig', function(req, res, next) {
+  var triG = req.params.trig;
+  bddUser.getUserByTriG(triG,
   function(err, rows){
-    if(rows){
-      console.log(rows[0]);
-      res.render('ska', {
+    if(err){
+      res.render('error', {
+        error : err
+      });
+    }
+    if(rows[0]){
+      res.render(triG, {
         user : rows[0]
       });
     }else{
       res.render('error', {
-        message: "Impossible de créer l'utilisateur'",
-        error: err });
+        message: "Cette page n'existe pas sur cette version de l'application"
+      });
     }
   });
 });

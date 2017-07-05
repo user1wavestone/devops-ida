@@ -47,7 +47,7 @@ BddUser.prototype.getUsers = function (callback) {
 BddUser.prototype.getUserByTriG = function (triG, callback) {
   var db = this.pdb;
   db.find({
-    selector: {triG : {triG: triG}}
+    selector: {triG: triG}
   }).then(function (result) {
     callback(null, result.docs);
   }).catch(function (err) {
