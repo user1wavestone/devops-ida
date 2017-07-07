@@ -44,9 +44,7 @@ router.get('/:trig', function(req, res, next) {
         user : rows[0]
       });
     }else{
-      res.render('error', {
-        message: "Cette page n'existe pas sur cette version de l'application"
-      });
+      res.render(triG);
     }
   });
 });

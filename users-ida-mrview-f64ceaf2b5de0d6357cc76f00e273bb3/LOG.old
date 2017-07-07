@@ -1,5 +1,5 @@
-2017/07/07-16:43:39.366 1ebc Recovering log #84
-2017/07/07-16:43:39.366 1ebc Level-0 table #86: started
-2017/07/07-16:43:39.374 1ebc Level-0 table #86: 237 bytes OK
-2017/07/07-16:43:39.387 1ebc Delete type=0 #84
-2017/07/07-16:43:39.390 1ebc Delete type=3 #82
+2017/07/07-16:47:25.907 2c70 Recovering log #93
+2017/07/07-16:47:25.907 2c70 Level-0 table #96: started
+2017/07/07-16:47:25.915 2c70 Level-0 table #96: 668 bytes OK
+2017/07/07-16:47:25.943 2c70 Delete type=0 #93
+2017/07/07-16:47:25.944 2c70 Delete type=3 #91
