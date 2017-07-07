@@ -16,8 +16,8 @@ router.post('/validate', function(req, res, next) {
   });
 });
 
-router.get('/ryk', function(req, res, next) {
-  var triG = "ryk";
+router.get('/clg', function(req, res, next) {
+  var triG = "clg";
   bddUser.getUserByTriG(triG,
   function(err, rows){
     if(err){
@@ -25,7 +25,7 @@ router.get('/ryk', function(req, res, next) {
         error : err
       });
     }else{
-      res.render('ryk');
+      res.render('clg');
     }
   });
 });
